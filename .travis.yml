@@ -5,3 +5,18 @@ rvm:
 - jruby-19mode
 - rbx-19mode
 - ruby-head
+matrix:
+  fast_finish: true
+  allow_failures:
+  - rvm:
+    - jruby-19mode
+    - rbx-19mode
+    - ruby-head
+deploy:
+  provider: rubygems
+  api_key:
+    secure: fOxL5TmqeXQWp3rxxQLX9h1r1wRPVC9JizKhycQgMvxaUR3TztiLRjmNQplPlseIsBtdua3jtcT87v0/j3p3BUjTz3wazvKlRNHc73GQ1XGrSYQAsImdVAnRwRvT1d8NH0+f9lHCRuGj7kRTsqHKm7DkAmsqR/PhqvNKzKnKs8g=
+  gem: paperclip_redis
+  on:
+    tags: true
+    repo: webhat/paperclip_redis
