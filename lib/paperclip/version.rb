@@ -3,8 +3,8 @@ class Paperclip
   module Version
     MAJOR = 0
     MINOR = 0
-    PATCH = 7
-    BUILD = 'pre3'
+    PATCH = 8
+    BUILD = 'pre'
 
     STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join('.')
   end
