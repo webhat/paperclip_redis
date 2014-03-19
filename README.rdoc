@@ -1,6 +1,8 @@
 = paperclip_redis
 
-Description goes here.
+A storage backed written as a {gist}[https://gist.github.com/unnu/4253524] by {Norman Timmler}[https://github.com/unnu].
+
+{<img src="https://badge.fury.io/rb/paperclip_redis.png" alt="Gem Version" />}[http://badge.fury.io/rb/paperclip_redis]
 
 == Contributing to paperclip_redis
  
