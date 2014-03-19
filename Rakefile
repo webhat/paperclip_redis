@@ -12,8 +12,8 @@ end
 require 'rake'
 
 require 'jeweler'
+require './lib/paperclip/version.rb'
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = "paperclip_redis"
   gem.homepage = "http://github.com/webhat/paperclip_redis"
   gem.license = "LGPLv2"
@@ -21,7 +21,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = "This module stores the image files in Redis"
   gem.authors = ["Daniel W. Crompton", "Norman Timmler"]
 	gem.email = ['paperclip+redis@specialbrands.net', '']
-  # dependencies defined in Gemfile
+  gem.version = Paperclip::Version::STRING
 end
 Jeweler::RubygemsDotOrgTasks.new
 
