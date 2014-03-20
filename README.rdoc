@@ -17,6 +17,6 @@ A storage backed written as a {gist}[https://gist.github.com/unnu/4253524] by {N
 
 == Copyright
 
-Copyright (c) 2014 Daniël W. Crompton. See LICENSE.txt for
+Copyright (c) 2014 Daniël W. Crompton, Norman Timmler. See LICENSE.txt for
 further details.
 
