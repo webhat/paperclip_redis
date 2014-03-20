@@ -3,7 +3,7 @@
 A storage backed written as a {gist}[https://gist.github.com/unnu/4253524] by {Norman Timmler}[https://github.com/unnu].
 
 {<img src="https://badge.fury.io/rb/paperclip_redis.png" alt="Gem Version" />}[http://badge.fury.io/rb/paperclip_redis]
-{<img src="https://travis-ci.org/webhat/oplerno.png?branch=master" alt='Travis Build Status' />}[https://travis-ci.org/webhat/oplerno]  
+{<img src="https://travis-ci.org/webhat/paperclip_redis.png?branch=master" alt='Travis Build Status' />}[https://travis-ci.org/webhat/oplerno]  
 
 == Contributing to paperclip_redis
  
