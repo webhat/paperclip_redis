@@ -12,7 +12,7 @@ end
 require 'rake'
 
 require 'jeweler'
-require './lib/paperclip/version.rb'
+require './lib/paperclip/myversion.rb'
 Jeweler::Tasks.new do |gem|
   gem.name = "paperclip_redis"
   gem.homepage = "http://github.com/webhat/paperclip_redis"

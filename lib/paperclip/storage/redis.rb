@@ -10,8 +10,8 @@ module Paperclip
 				end unless defined?(Redis)
 
 				base.instance_eval do
-					@options[:path] = ":class/:attachment/:id_partition/:style/:filename"
-					@options[:url] = "/dynamic/:class/:attachment/:id_partition/:style/:filename"
+					@options[:path] ||= ":class/:attachment/:id_partition/:style/:filename"
+					@options[:url] ||= "/dynamic/:class/:attachment/:id_partition/:style/:filename"
 					@redis = ::Redis.new
 				end
 			end

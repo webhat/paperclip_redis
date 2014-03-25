@@ -4,9 +4,8 @@ class Paperclip
     MAJOR = 0
     MINOR = 0
     PATCH = 8
-    BUILD = 'pre'
 
-    STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join('.')
+    STRING = [MAJOR, MINOR, PATCH].compact.join('.')
   end
 end
 

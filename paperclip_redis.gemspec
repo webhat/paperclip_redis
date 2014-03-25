@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Daniel W. Crompton", "Norman Timmler"]
-  s.date = "2014-03-19"
+  s.date = "2014-03-25"
   s.description = "This module stores the image files in Redis"
   s.email = ["paperclip+redis@specialbrands.net", ""]
   s.extra_rdoc_files = [
@@ -29,7 +29,6 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/paperclip/storage.rb",
     "lib/paperclip/storage/redis.rb",
-    "lib/paperclip/version.rb",
     "lib/paperclip_redis.rb",
     "paperclip_redis.gemspec",
     "spec/paperclip_redis_spec.rb",
