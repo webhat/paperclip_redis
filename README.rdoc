@@ -4,6 +4,7 @@ A storage backed written as a {gist}[https://gist.github.com/unnu/4253524] by {N
 
 {<img src="https://badge.fury.io/rb/paperclip_redis.png" alt="Gem Version" />}[http://badge.fury.io/rb/paperclip_redis]
 {<img src="https://travis-ci.org/webhat/paperclip_redis.png?branch=master" alt='Travis Build Status' />}[https://travis-ci.org/webhat/paperclip_redis]  
+{<img src="https://www.versioneye.com/user/projects/5336d4467bae4bb0ec000ad6/badge.png" alt="Dependency Status" />}[https://www.versioneye.com/user/projects/5336d4467bae4bb0ec000ad6]
 
 == Contributing to paperclip_redis
  
@@ -17,6 +18,5 @@ A storage backed written as a {gist}[https://gist.github.com/unnu/4253524] by {N
 
 == Copyright
 
-Copyright (c) 2014 Daniël W. Crompton, Norman Timmler. See LICENSE.txt for
-further details.
+Copyright (c) 2014 Daniël W. Crompton, Norman Timmler. See LICENSE.txt for further details.
 
