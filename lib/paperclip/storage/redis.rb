@@ -12,12 +12,16 @@ module Paperclip
 				base.instance_eval do
 					@options[:path] ||= ":class/:attachment/:id_partition/:style/:filename"
 					@options[:url] ||= "/dynamic/:class/:attachment/:id_partition/:style/:filename"
-					@redis = ::Redis.new
+					@redis = ::Redis.new( url: ENV['PAPERCLIP_REDIS'])
 				end
 			end
 
 			def exists?(style = default_style)
 				@redis.exists(path(style))
+			end
+
+			def ping
+				@redis.ping
 			end
 
 			def flush_writes
