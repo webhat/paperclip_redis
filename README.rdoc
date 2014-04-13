@@ -10,7 +10,9 @@ A storage backed written as a {gist}[https://gist.github.com/unnu/4253524] by {N
 
 Use the environment variable +PAPERCLIP_REDIS+ to define the location of the redis server
 
-+PAPERCLIP_REDIS=http://remotehost:6379/
+
+  PAPERCLIP_REDIS=http://remotehost:6379/
+
 
 == Contributing to paperclip_redis
  
