@@ -17,7 +17,6 @@ module Paperclip
 			end
 
 			def exists?(style = default_style)
-				p @redis.connected?
 				@redis.with_reconnect do
 					@redis.exists(path(style))
 				end
@@ -31,7 +30,6 @@ module Paperclip
 				@queued_for_write.each do |style, file|
 					log("saving #{path(style)}")
 					file.rewind
-					log @redis
 					@redis.with_reconnect do
 						@redis.set(path(style), file.read)
 					end
@@ -41,7 +39,6 @@ module Paperclip
 			def flush_deletes
 				@queued_for_delete.each do |path|
 					log("deleting #{path}")
-					p @redis.connected?
 					@redis.with_reconnect do
 						@redis.del(path)
 					end
@@ -55,7 +52,6 @@ module Paperclip
 			end
 
 			def read(style = default_style)
-				p @redis.connected?
 				@redis.with_reconnect do
 					@redis.get(path(style))
 				end
