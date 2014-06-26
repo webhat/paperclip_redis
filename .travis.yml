@@ -21,8 +21,11 @@ deploy:
     tags: true
     repo: webhat/paperclip_redis
 script:
-- cd spec/paperclip-app/ && bundle exec rake db:migrate --trace
-- cd spec/paperclip-app/ && bundle exec rake db:test:prepare
+- cd spec/paperclip-app/
+- bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+before_script:
+- bundle config build.nokogiri --use-system-libraries
 env:
   - "RAILS_VERSION=3.1.0"
   - "RAILS_VERSION=3.2.0"
