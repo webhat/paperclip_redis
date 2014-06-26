@@ -7,12 +7,12 @@ rvm:
 - ruby-head
 matrix:
   fast_finish: true
-    allow_failures:
-    - rvm:
-      - jruby-19mode
-      - rbx-19mode
-      - ruby-head
-    - env: "RAILS_VERSION=master"
+  allow_failures:
+  - rvm:
+    - jruby-19mode
+    - rbx-19mode
+    - ruby-head
+  - env: "RAILS_VERSION=master"
 deploy:
   provider: rubygems
   api_key:
