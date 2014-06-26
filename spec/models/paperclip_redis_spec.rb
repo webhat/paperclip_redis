@@ -1,6 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+require 'paperclip_redis'
 
-describe "PaperclipRedis" do
+describe 'Paperclip::Storage::Redis' do
 	class DummyClass
 		def initialize
 			@options = {}

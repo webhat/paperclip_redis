@@ -17,7 +17,9 @@ module Paperclip
 			end
 
 			def exists?(style = default_style)
-				@redis.exists(path(style))
+				@redis.with_reconnect do
+					@redis.exists(path(style))
+				end
 			end
 
 			def ping
@@ -28,14 +30,18 @@ module Paperclip
 				@queued_for_write.each do |style, file|
 					log("saving #{path(style)}")
 					file.rewind
-					@redis.set(path(style), file.read)
+					@redis.with_reconnect do
+						@redis.set(path(style), file.read)
+					end
 				end
 			end
 
 			def flush_deletes
 				@queued_for_delete.each do |path|
 					log("deleting #{path}")
-					@redis.del(path)
+					@redis.with_reconnect do
+						@redis.del(path)
+					end
 				end
 			end
 
@@ -46,7 +52,9 @@ module Paperclip
 			end
 
 			def read(style = default_style)
-				@redis.get(path(style))
+				@redis.with_reconnect do
+					@redis.get(path(style))
+				end
 			end
 
 			class App
