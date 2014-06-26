@@ -11,7 +11,7 @@ GIT
 PATH
   remote: ../..
   specs:
-    paperclip_redis (0.0.9)
+    paperclip_redis (0.1.0)
       paperclip
       redis
 
