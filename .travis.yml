@@ -7,11 +7,12 @@ rvm:
 - ruby-head
 matrix:
   fast_finish: true
-  allow_failures:
-  - rvm:
-    - jruby-19mode
-    - rbx-19mode
-    - ruby-head
+    allow_failures:
+      - rvm:
+        - jruby-19mode
+        - rbx-19mode
+        - ruby-head
+      - env: "RAILS_VERSION=master"
 deploy:
   provider: rubygems
   api_key:
@@ -24,8 +25,9 @@ script:
 - cd spec/paperclip-app/
 - bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
-before_script:
+before_install:
 - bundle config build.nokogiri --use-system-libraries
+- echo 'gem: --no-ri --no-rdoc' > ~/.gemrc
 env:
   - "RAILS_VERSION=3.1.0"
   - "RAILS_VERSION=3.2.0"
