@@ -27,7 +27,6 @@ script:
 - bundle exec rake db:test:prepare
 before_install:
 - bundle config build.nokogiri --use-system-libraries
-- echo 'gem: --no-ri --no-rdoc' > ~/.gemrc
 env:
   - "RAILS_VERSION=3.1.0"
   - "RAILS_VERSION=3.2.0"
