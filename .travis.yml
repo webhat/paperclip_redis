@@ -20,3 +20,6 @@ deploy:
   on:
     tags: true
     repo: webhat/paperclip_redis
+script:
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
