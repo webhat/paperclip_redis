@@ -12,6 +12,7 @@ matrix:
     - jruby-19mode
     - rbx-19mode
     - ruby-head
+  - env: "RAILS_VERSION=master"
 deploy:
   provider: rubygems
   api_key:
@@ -21,5 +22,18 @@ deploy:
     tags: true
     repo: webhat/paperclip_redis
 script:
-- RAILS_ENV=test bundle exec rake db:migrate --trace
+- cd spec/paperclip-app/
+- bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
+- cd ../..
+- bundle exec rake
+before_install:
+- bundle config build.nokogiri --use-system-libraries
+env:
+  - "RAILS_VERSION=3.1.0"
+  - "RAILS_VERSION=3.2.0"
+  - "RAILS_VERSION=4.0.0"
+  - "RAILS_VERSION=4.1.0"
+  - "RAILS_VERSION=master"
+services:
+  - redis-server
