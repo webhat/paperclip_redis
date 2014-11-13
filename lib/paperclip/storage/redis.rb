@@ -62,10 +62,12 @@ module Paperclip
 					content = ::Redis.new.get(env["PATH_INFO"].gsub(/^\//, ""))
 					extname = File.extname(env["PATH_INFO"])[1..-1]
 					content_type = Mime::Type.lookup_by_extension(extname)
-					[200, {"Content-Type" => content_type.to_s, "Content-Length" => content.bytesize.to_s}, [content]]
-				rescue
-					raise $!
-					[404, {}, []]
+					begin
+						[200, {"Content-Type" => content_type.to_s, "Content-Length" => content.bytesize.to_s}, [content]]
+					rescue
+						#raise $!
+						[404, {}, []]
+					end
 				end
 			end
 		end
