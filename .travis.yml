@@ -2,16 +2,27 @@ language: ruby
 rvm:
 - 2.0.0
 - 1.9.3
-- jruby-19mode
 - rbx-19mode
 - ruby-head
 matrix:
   fast_finish: true
+  include:
+  - rvm: jruby-19mode
+    env: JRUBY_OPTS="$JRUBY_OPTS --debug"  # for simplecov
+  - rvm: jruby-20mode
+    env: JRUBY_OPTS="$JRUBY_OPTS --debug"  # for simplecov
+  - rvm: jruby-21mode
+    env: JRUBY_OPTS="$JRUBY_OPTS --debug"  # for simplecov
+  - rvm: jruby-head
+    env: JRUBY_OPTS="$JRUBY_OPTS --debug"  # for simplecov
   allow_failures:
-  - rvm:
-    - jruby-19mode
-    - rbx-19mode
-    - ruby-head
+  - rvm: jruby-19mode  # inconsistent travis-ci failures
+  - rvm: jruby-20mode  # inconsistent travis-ci failures
+  - rvm: jruby-21mode  # inconsistent travis-ci failures
+  - rvm: jruby-head    # inconsistent travis-ci failures
+  - rvm: rbx-19mode
+  - rvm: ruby-head
+  - env: "RAILS_VERSION=master"
 deploy:
   provider: rubygems
   api_key:
@@ -20,3 +31,25 @@ deploy:
   on:
     tags: true
     repo: webhat/paperclip_redis
+script:
+- cd spec/paperclip-app/
+- bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- cd ../..
+- bundle exec rake
+before_install:
+- bundle config build.nokogiri --use-system-libraries
+env:
+  - "RAILS_VERSION=3.1.0"
+  - "RAILS_VERSION=3.2.0"
+  - "RAILS_VERSION=4.0.0"
+  - "RAILS_VERSION=4.1.0"
+  - "RAILS_VERSION=master"
+services:
+  - redis-server
+notifications:
+  irc:
+    channels:
+      - irc.freenode.org#paperclip-redis
+    on_success: never
+    on_failure: change

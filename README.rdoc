@@ -2,9 +2,11 @@
 
 A storage backed written as a {gist}[https://gist.github.com/unnu/4253524] by {Norman Timmler}[https://github.com/unnu].
 
+{<img src="https://hakiri.io/github/webhat/paperclip_redis/master.svg" alt="security" />}[https://hakiri.io/github/webhat/paperclip_redis/master]
 {<img src="https://badge.fury.io/rb/paperclip_redis.png" alt="Gem Version" />}[http://badge.fury.io/rb/paperclip_redis]
 {<img src="https://travis-ci.org/webhat/paperclip_redis.png?branch=master" alt='Travis Build Status' />}[https://travis-ci.org/webhat/paperclip_redis]  
 {<img src="https://www.versioneye.com/user/projects/5336d4467bae4bb0ec000ad6/badge.png" alt="Dependency Status" />}[https://www.versioneye.com/user/projects/5336d4467bae4bb0ec000ad6]
+{<img src="http://inch-pages.github.io/github/webhat/paperclip_redis.png" alt="Inline docs" />}[http://inch-pages.github.io/github/webhat/paperclip_redis]
 
 = Usage
 
