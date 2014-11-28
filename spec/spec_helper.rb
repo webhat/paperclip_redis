@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require 'simplecov'
 
 module SimpleCov::Configuration
